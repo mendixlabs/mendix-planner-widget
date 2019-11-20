@@ -1,0 +1,53 @@
+{
+  "name": "plannerwidget",
+  "widgetName": "PlannerWidget",
+  "version": "1.0.0",
+  "description": "Doing some planning",
+  "copyright": "Mendix 2019",
+  "author": "Jelte Lagendijk",
+  "config": {
+    "widgetPath": "./dist/MxTestProject/widgets",
+    "projectPath": "./dist/MxTestProject/",
+    "mendixHost": "http://10.211.55.3:8080",
+    "developmentPort": "3000"
+  },
+  "packagePath": "com.mendix.widget.custom",
+  "scripts": {
+    "start": "node --max_old_space_size=4112 ./node_modules/.bin/concurrently \"pluggable-widgets-tools start:server --open\" \"npm:dev\"",
+    "dev": "node --max_old_space_size=4112 ./node_modules/.bin/pluggable-widgets-tools start:js",
+    "build": "node --max_old_space_size=4112 ./node_modules/.bin/pluggable-widgets-tools build:js",
+    "lint": "node --max_old_space_size=4112 ./node_modules/.bin/pluggable-widgets-tools lint",
+    "lint:fix": "node --max_old_space_size=4112 ./node_modules/.bin/pluggable-widgets-tools lint:fix",
+    "prerelease": "npm run lint",
+    "release": "node --max_old_space_size=4112 ./node_modules/.bin/pluggable-widgets-tools release:js",
+    "analyze": "node --max_old_space_size=4112 ./node_modules/.bin/pluggable-widgets-tools release:js --analyze"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@mendix/pluggable-widgets-tools": "git@github.com:mendix/pluggable-widgets-tools.git",
+    "@types/big.js": "^4.0.5",
+    "@types/jest": "^24.0.0",
+    "@types/lodash": "^4.14.147",
+    "@types/mustache": "^0.8.32",
+    "@types/react": "^16.8.17",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-resize-detector": "^4.2.0",
+    "@types/react-test-renderer": "^16.8.1",
+    "@types/sanitize-html": "^1.20.2",
+    "@types/uuid": "^3.4.6",
+    "mendix-client": "^7.15.8",
+    "webpack-bundle-analyzer": "^3.6.0"
+  },
+  "dependencies": {
+    "@bem-react/classname": "^1.5.6",
+    "@jeltemx/mendix-react-widget-utils": "^0.1.0",
+    "antd": "^3.25.1",
+    "big.js": "^5.2.2",
+    "core-js": "^3.4.1",
+    "lodash": "^4.17.15",
+    "mustache": "^3.1.0",
+    "react-resize-detector": "^4.2.1",
+    "sanitize-html": "^1.20.1",
+    "uuid": "^3.3.3"
+  }
+}

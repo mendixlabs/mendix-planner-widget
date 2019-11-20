@@ -1,0 +1,98 @@
+@import "./imports";
+@import "./helpers";
+@import "./variables";
+
+.#{$block} {
+    @include element($elDayColumn) {
+        .ant-table-header-column {
+            @extend %max-width-column;
+            .ant-table-column-title {
+                @extend %max-width-column;
+            }
+        }
+        @include modifier($modToday) {
+            background: $color-today!important;
+        }
+        @include modifier($modNotInMonth) {
+            background: $color-not-this-month!important;
+            .#{$block}__#{$elDayIndicator} {
+                color: #CCC;
+                font-style: italic;
+            }
+        }
+        @include modifier($modClickable) {
+            cursor: pointer;
+            * {
+                pointer-events: none;
+            }
+        }
+    }
+
+    @include element($elDayIndicator) {
+        @extend %max-width-column;
+        @include element($modDay) {
+            @extend %max-width-column;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        @include element($modNum) {
+            @extend %max-width-column;
+            text-align: center;
+            font-size: 0.9em;
+        }
+    }
+
+    @include element($elWeekColumn) {
+        text-align: left!important;
+    }
+
+
+    @include element($elFirstColumn) {
+        .#{$elFirstColumn}__text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+            white-space: nowrap;
+        }
+        @include modifier($modClickable) {
+            cursor: pointer;
+            * {
+                pointer-events: none;
+            }
+        }
+    }
+
+    .entryTitle {
+        max-width: 100%;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .hover-cell {
+        font-weight: bold;
+    }
+
+    // Dirty hacks
+
+    .ant-table-thead > tr.ant-table-row-hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td,
+    .ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td,
+    .ant-table-thead > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td,
+    .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td {
+        background: inherit;
+
+    }
+    .ant-table-thead > tr.ant-table-row-hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td.#{$block}__#{$elDayColumn}--#{$modNotInMonth},
+    .ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td.#{$block}__#{$elDayColumn}--#{$modNotInMonth},
+    .ant-table-thead > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td.#{$block}__#{$elDayColumn}--#{$modNotInMonth},
+    .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td.#{$block}__#{$elDayColumn}--#{$modNotInMonth} {
+        background: $color-not-this-month;
+    }
+
+    @include element('alerts') {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 10px;
+    }
+}

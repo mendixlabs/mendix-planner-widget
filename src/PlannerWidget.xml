@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="com.mendix.widget.custom.plannerwidget.PlannerWidget" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Planner Widget</name>
+    <description>Doing some planning</description>
+    <icon>iVBORw0KGgoAAAANSUhEUgAAAEAAAABBCAYAAABhNaJ7AAAE9ElEQVR4nO2bTYgcRRTHf7uzq6uJUSOKUTEEBEExKkZFAkaNivgdclJBg4nnHDyKNy96y8mLiviBJ0EEvz2oqKAYZUWNARGDSgiLiWTNunFndqSW1+Oz0vW6qmZ6Mx/7h6a7q1//q+p1vTevXtWwghHHWNH9xthEqiZuBHYDt8n9B8DTwJc1q/R24HHgBmAReBN4BvguhaTVbi6dcxVwq3S4DFuAT1LIEvAQ8EqJ+DxwDfBDLFU3CpgCDgDnBZ67ZxuAdk4PDawBZoBTAiJ7gU2xZIUCxjMacp3ReYf1ItNr3GV0HhkBG1LrzFHAGREyloJycXbEe6tTuXMUsBAhczyDtxeczVTSHAWMRcgMDLTne0OGt6/FCfGy7wN7gH8iOrco5x3ATTlfRtX9EfCi4uy23gbwG/BkUUGB+yrI14sCYkZAwbsduDtC3sJaUcBkhGwxou8Fthlyc4UCtAnMVpD/IudjEQ2ZkfOvEbJV+F2eH46QPSrn+Qq5A8VFig8oPOzXwJEK8r1yvSaBP4S1Uv5OhSP8VinroljyFAVskiBoQSKyEHao8lsS+EO4WczOjbzHAjLuiz8s1y5WuCqWPEUBqyT2R77GFnGcs3K4683itBweAdYl8IdwrlLqy8CdwIeq3leBa4FpkdkdGassQYfCRyNeXBDt6pi7eEf7kPOBH4Ezs7p8Iv4ENno+pazeS8UUrIjRYV+r3bzMXaTGAc4TfwxsVWWzXiPcLO3zHnbe4SzgM+EO1btVZKo6/z+kjgCN1+X4ys0tgCuB+5Ut1oWXxNym5Tfd+aZ7gAcS6uuMgG4UUKAtR05U2Q0Wpf05kWlHAclZkBLkNqJb9EThy/3V+g4rCuiDNpxUjLwCLCfosq3fLGNb6sTVMkM8AZYCngXeHehu/4c7QgqwTODCmhu1nAj2ZVR9QCdl34tAyMI6mc3pRGoROLm8wV+q/GKZP+g01rhEfD+rXEAKZwjLpoCngEcDz5xdvqfun1PLbD5c2LovgzOETtq+bhM41Xjm1z0VKZvCGcKq1BdyYeXmWt7934aszgincFbKjXwgVLcCTjee+f7HWtZqZHJWom4neNhIt/sZ3hlDVnv8FM5KWAmRXcDzqYQepowFjTnPZk8zPsgx5QdSOAvslF+ZArOtdnMpZV/3CJiPWKQoYDnBXM5KjLwTzBkB5wDXy5DUP09uCP8EfK/KLgcu8b7uuBxfAH+ocrfB4QLPjhtSx6dqSS6FsxI5CnCdfyvw7DXgQXX/hJGtdTs+3lb3e2RhpQxXqE1QKZyVyDEBa5na3zxhbabweWJlUzgr0U8KsPYd6A1XJ10BQ4UcBVhLT/5yuLU87vNYm6C0r0rhrESOEzwi3r7lDTkXyu73ZPfLgqaeo4+Ld/f3GEzLNHVOlU1IfkBvykjhrERuJDhWshFyMmCfZeVl7+sOVyGFEysSzPUBZRWFnFNZeaihsZupUjhNjLwTzPEBq2XHWNvT+qTM6A6qsn7NCXaQo4DNxnrBC2JvBfo1J9hBjglY7/j5un7NCea/UJF386ep/ZoT7GDknWCOAiy/4efrhjIneNzIyfnbWYcyJ9gwvsKCZ6NDmRNsRWysLjDQOcFDvaqkDxDsizUCtkv+r+7Mcd1oyp8nStGLjZKDiK5ng0MDPQJ6/UfHvkar3Vzqu7bvgzn/uxtQJM0YVzC0AP4FHDhMdpH6bTIAAAAASUVORK5CYII=</icon>
+    <properties>
+
+        <!-- Resources -->
+
+        <propertyGroup caption="Resource">
+            <propertyGroup caption="Data Source">
+                <property key="resourceEntity" type="entity" required="true" allowNonPersistableEntities="true">
+                    <caption>Resource</caption>
+                    <description />
+                </property>
+                <property key="resourceDataSource" type="enumeration" defaultValue="xpath">
+                    <caption>Data Source</caption>
+                    <description>Choose how you retrieve resources</description>
+                    <enumerationValues>
+                        <enumerationValue key="xpath">XPath</enumerationValue>
+                        <enumerationValue key="mf">Microflow</enumerationValue>
+                        <enumerationValue key="nf">Nanoflow</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="resourceConstraint" required="false" type="entityConstraint" entityProperty="resourceEntity">
+                    <caption>Node constraint</caption>
+                    <description>The xpath constraint on the entity.</description>
+                </property>
+                <property key="resourceGetDataMf" type="microflow" required="false">
+                    <caption>Microflow</caption>
+                    <description>Choose 'Microflow' in Data Source and choose a microflow here</description>
+                    <returnType type="Object" isList="true" entityProperty="resourceEntity" />
+                </property>
+                <property key="resourceGetDataNf" type="nanoflow" required="false">
+                    <caption>Nanoflow</caption>
+                    <description>Choose 'Nanoflow' in Data Source and choose a nanoflow here.</description>
+                    <returnType type="Object" isList="true" entityProperty="resourceEntity" />
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="UI">
+                <property key="resourceTitleType" type="enumeration" defaultValue="attribute">
+                    <caption>Resource Title Type</caption>
+                    <description></description>
+                    <enumerationValues>
+                         <enumerationValue key="attribute">Attribute</enumerationValue>
+                         <enumerationValue key="nanoflow">Nanoflow</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="resourceTitleAttr" type="attribute" entityProperty="resourceEntity" required="false">
+                    <caption>Resource Title Attribute</caption>
+                    <description>Attribute that contains the title. Note that this can contain HTML if you need it.</description>
+                    <attributeTypes>
+                         <attributeType name="String" />
+                    </attributeTypes>
+                </property>
+                <property key="resourceTitleNf" type="nanoflow" entityProperty="resourceEntity" required="false">
+                    <caption>Resource Title Nanoflow</caption>
+                    <description>Choose 'Nanoflow' in Resource Title Attribute and choose a nanoflow here. The Nanoflow should return a string and can contain HTML</description>
+                    <returnType type="String" />
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+
+        <!-- Entries -->
+
+        <propertyGroup caption="Entries">
+            <propertyGroup caption="Main">
+                <property key="entryEntity" type="entity" required="true" allowNonPersistableEntities="true">
+                    <caption>Entry</caption>
+                    <description />
+                </property>
+                <property key="entryReference" type="entity" required="true" entityProperty="entryEntity" isPath="yes" pathType="reference" allowNonPersistableEntities="true">
+                    <caption>Reference to Resource</caption>
+                    <description />
+                </property>
+                <property key="entryDateAttr" type="attribute" entityProperty="entryEntity" required="true" >
+                    <caption>Date</caption>
+                    <description>Note that this planner only supports ONE entry per resource per date. If you return more entries for a certain resource/date pair, the widget will use the latest. Make sure you setup the correct logic in your app to make sure you don't have multiple entries for a specific date/resource pair.</description>
+                    <attributeTypes>
+                         <attributeType name="DateTime" />
+                    </attributeTypes>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Helper">
+                <property key="entryHelperEntity" type="entity" required="true" allowNonPersistableEntities="true">
+                    <caption>Entry Helper</caption>
+                    <description>This non-persistent entity is used to get the entries for a specific resource. This helper should contain the following things: Begin- and enddate (non-localized), a referenceSet to a resource. This way we can retrieve all Entries in action</description>
+                </property>
+                <property key="entryHelperReference" type="entity" required="true" entityProperty="entryHelperEntity" isPath="yes" pathType="referenceSet" allowNonPersistableEntities="true">
+                    <caption>Reference to Resource</caption>
+                    <description />
+                </property>
+                <property key="entryHelperStartDateAttr" type="attribute" entityProperty="entryHelperEntity">
+                    <caption>Start Date Attr</caption>
+                    <description />
+                    <attributeTypes>
+                         <attributeType name="DateTime" />
+                    </attributeTypes>
+                </property>
+                <property key="entryHelperEndDateAttr" type="attribute" entityProperty="entryHelperEntity">
+                    <caption>End Date Attr</caption>
+                    <description />
+                    <attributeTypes>
+                         <attributeType name="DateTime" />
+                    </attributeTypes>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Data Source">
+                <property key="entryDataSource" type="enumeration" defaultValue="mf">
+                    <caption>Data Source</caption>
+                    <description>Choose how you retrieve entries</description>
+                    <enumerationValues>
+                        <enumerationValue key="mf">Microflow</enumerationValue>
+                        <enumerationValue key="nf">Nanoflow</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="entryGetDataMf" type="microflow" required="false" entityProperty="entryHelperEntity">
+                    <caption>Microflow</caption>
+                    <description>Choose 'Microflow' in Data Source and choose a microflow here</description>
+                    <returnType type="Object" isList="true" entityProperty="entryEntity" />
+                </property>
+                <property key="entryGetDataNf" type="nanoflow" required="false" entityProperty="entryHelperEntity">
+                    <caption>Nanoflow</caption>
+                    <description>Choose 'Nanoflow' in Data Source and choose a nanoflow here.</description>
+                    <returnType type="Object" isList="true" entityProperty="entryEntity" />
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="UI">
+                <property key="entryTitleType" type="enumeration" defaultValue="attribute">
+                    <caption>Entry Title Type</caption>
+                    <description></description>
+                    <enumerationValues>
+                         <enumerationValue key="attribute">Attribute</enumerationValue>
+                         <enumerationValue key="nanoflow">Nanoflow</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="entryTitleAttr" type="attribute" entityProperty="entryEntity" required="false">
+                    <caption>Entry Title Attribute</caption>
+                    <description>Attribute that contains the title.</description>
+                    <attributeTypes>
+                         <attributeType name="String" />
+                    </attributeTypes>
+                </property>
+                <property key="entryTitleNf" type="nanoflow" entityProperty="entryEntity" required="false">
+                    <caption>Entry Title Nanoflow</caption>
+                    <description>Choose 'Nanoflow' in Entry Title Attribute and choose a nanoflow here. The Nanoflow should return a string and can contain HTML</description>
+                    <returnType type="String" />
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+
+        <!-- View -->
+
+        <propertyGroup caption="View">
+            <propertyGroup caption="Show view">
+                <property key="viewYearAttr" type="attribute" required="true">
+                    <caption>Year attribute</caption>
+                    <description></description>
+                    <attributeTypes>
+                         <attributeType name="Integer" />
+                    </attributeTypes>
+                </property>
+                <property key="viewMonthAttr" type="attribute" required="true">
+                    <caption>Month attribute</caption>
+                    <description></description>
+                    <attributeTypes>
+                         <attributeType name="Integer" />
+                    </attributeTypes>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+
+        <!-- Table settings -->
+
+        <propertyGroup caption="UI settings">
+            <propertyGroup caption="Widths">
+                <property key="tableLeftColumnWidth" type="integer" required="true" defaultValue="200">
+                    <caption>Left column width</caption>
+                    <description>Set pixel width of left column</description>
+                </property>
+                <property key="tableCellColumnWidth" type="integer" required="true" defaultValue="200">
+                    <caption>Cell column width</caption>
+                    <description>Set pixel width of individual cells</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Row/Column Locking">
+                <property key="tableLockHeaderRow" type="boolean" defaultValue="true">
+                    <caption>Lock header row</caption>
+                    <description>This will keep the header row in view while scrolling. Disable this if you experience problems (for example in IE browsers)</description>
+                </property>
+                <property key="tableLockLeftColumn" type="boolean" defaultValue="true">
+                    <caption>Lock left column</caption>
+                    <description>This will keep the left column in view while scrolling. Disable this if you experience problems (for example in IE browsers)</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Size">
+                <property key="widthUnit" type="enumeration" defaultValue="percentage">
+                    <caption>Width unit</caption>
+                    <description/>
+                    <enumerationValues>
+                        <enumerationValue key="percentage">Percentage</enumerationValue>
+                        <enumerationValue key="pixels">Pixels</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="width" type="integer" defaultValue="100">
+                    <caption>Width</caption>
+                    <description/>
+                </property>
+                <property key="heightUnit" type="enumeration" defaultValue="pixels">
+                    <caption>Height unit</caption>
+                    <description>'Percentage of width' is the aspect ratio, 'Pixels' is absolute. Warning: When using 'Percentage of parent' the parent container must have an absolute height, else nothing is displayed.</description>
+                    <enumerationValues>
+                        <enumerationValue key="percentageOfWidth">Percentage of width</enumerationValue>
+                        <enumerationValue key="pixels">Pixels</enumerationValue>
+                        <enumerationValue key="percentageOfParent">Percentage of parent</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="height" type="integer" defaultValue="580">
+                    <caption>Height</caption>
+                    <description/>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+
+        <!-- Events -->
+
+        <propertyGroup caption="Events">
+            <!-- Entry -->
+            <propertyGroup caption="Resource">
+                <property key="eventResourceOnClickAction" type="enumeration" defaultValue="nothing">
+                    <caption>Resource click action</caption>
+                    <description>This action is executed when you click the resource title (left column)</description>
+                    <enumerationValues>
+                            <enumerationValue key="nothing">Nothing</enumerationValue>
+                            <enumerationValue key="mf">Microflow</enumerationValue>
+                            <enumerationValue key="nf">Nanoflow</enumerationValue>
+                            <enumerationValue key="open">Open page</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="eventResourceClickFormat" type="enumeration" defaultValue="single">
+                    <caption>Resource click type</caption>
+                    <description></description>
+                    <enumerationValues>
+                         <enumerationValue key="single">Single</enumerationValue>
+                         <enumerationValue key="double">Double</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="eventResourceOnClickMf" type="microflow" required="false" entityProperty="resourceEntity">
+                    <caption>Resource click Microflow</caption>
+                    <description></description>
+                    <returnType type="Void" />
+                </property>
+                <property key="eventResourceOnClickNf" type="nanoflow" required="false" entityProperty="resourceEntity">
+                    <caption>Resource click Nanoflow</caption>
+                    <description></description>
+                    <returnType type="Void" />
+                </property>
+                <property key="eventResourceOnClickForm" type="form" required="false">
+                    <caption>Resource click page</caption>
+                    <description>The page to open when an entry is clicked</description>
+                </property>
+                <property key="eventResourceOnClickOpenPageAs" type="enumeration" defaultValue="content">
+                    <caption>Resource click open page as</caption>
+                    <description/>
+                    <enumerationValues>
+                        <enumerationValue key="content">Full page</enumerationValue>
+                        <enumerationValue key="popup">Popup</enumerationValue>
+                        <enumerationValue key="modal">Blocking popup</enumerationValue>
+                    </enumerationValues>
+                </property>
+            </propertyGroup>
+            <!-- Entry -->
+            <propertyGroup caption="Entry">
+                <property key="eventEntryOnClickAction" type="enumeration" defaultValue="nothing">
+                    <caption>Entry click action</caption>
+                    <description>This action is executed when you click on a cell that has an entry</description>
+                    <enumerationValues>
+                            <enumerationValue key="nothing">Nothing</enumerationValue>
+                            <enumerationValue key="mf">Microflow</enumerationValue>
+                            <enumerationValue key="nf">Nanoflow</enumerationValue>
+                            <enumerationValue key="open">Open page</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="eventEntryClickFormat" type="enumeration" defaultValue="single">
+                    <caption>Entry click type</caption>
+                    <description></description>
+                    <enumerationValues>
+                         <enumerationValue key="single">Single</enumerationValue>
+                         <enumerationValue key="double">Double</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="eventEntryOnClickMf" type="microflow" required="false" entityProperty="entryEntity">
+                    <caption>Entry click Microflow</caption>
+                    <description></description>
+                    <returnType type="Void" />
+                </property>
+                <property key="eventEntryOnClickNf" type="nanoflow" required="false" entityProperty="entryEntity">
+                    <caption>Entry click Nanoflow</caption>
+                    <description></description>
+                    <returnType type="Void" />
+                </property>
+                <property key="eventEntryOnClickForm" type="form" required="false">
+                    <caption>Entry click page</caption>
+                    <description>The page to open when an entry is clicked</description>
+                </property>
+                <property key="eventEntryOnClickOpenPageAs" type="enumeration" defaultValue="content">
+                    <caption>Entry click open page as</caption>
+                    <description/>
+                    <enumerationValues>
+                        <enumerationValue key="content">Full page</enumerationValue>
+                        <enumerationValue key="popup">Popup</enumerationValue>
+                        <enumerationValue key="modal">Blocking popup</enumerationValue>
+                    </enumerationValues>
+                </property>
+            </propertyGroup>
+            <!-- Empty -->
+            <propertyGroup caption="Empty">
+                <property key="eventEmptyOnClickAction" type="enumeration" defaultValue="nothing">
+                    <caption>Empty click action</caption>
+                    <description>This action is executed when you click on an empty cell</description>
+                    <enumerationValues>
+                            <enumerationValue key="nothing">Nothing</enumerationValue>
+                            <enumerationValue key="mf">Microflow</enumerationValue>
+                            <enumerationValue key="nf">Nanoflow</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="eventEmptyClickFormat" type="enumeration" defaultValue="single">
+                    <caption>Empty click type</caption>
+                    <description></description>
+                    <enumerationValues>
+                         <enumerationValue key="single">Single</enumerationValue>
+                         <enumerationValue key="double">Double</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="eventEmptyOnClickMf" type="microflow" required="false" entityProperty="entryHelperEntity">
+                    <caption>Empty click Microflow</caption>
+                    <description>Note: this requires you to set the Entry Helper entity. The widget will create this object, set the association to the Resource entity (this is a reference set, but will only contain 1 single reference to a Resource), as well as the date (Start- &amp; end-date will be the same)</description>
+                    <returnType type="Void" />
+                </property>
+                <property key="eventEmptyOnClickNf" type="nanoflow" required="false" entityProperty="entryHelperEntity">
+                    <caption>Empty click Nanoflow</caption>
+                    <description>Note: this requires you to set the Entry Helper entity. The widget will create this object, set the association to the Resource entity (this is a reference set, but will only contain 1 single reference to a Resource), as well as the date (Start- &amp; end-date will be the same)</description>
+                    <returnType type="Void" />
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+    </properties>
+</widget>
