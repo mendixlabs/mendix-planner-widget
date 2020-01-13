@@ -48,8 +48,6 @@ import { MonthDay, getDateKey, getMonth } from "./utils/date";
 import { TypeValidationSeverity, ValidationMessage, validateProps } from "./utils/validation";
 import { TemplateComponent } from "./components/TemplateComponent";
 
-console.log(TemplateComponent);
-
 class PlannerWidget extends Component<PlannerWidgetContainerProps, PlannerWidgetState> {
     private widgetId?: string;
     private subscriptionHandles: number[] = [];

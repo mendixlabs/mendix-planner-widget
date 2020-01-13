@@ -1,14 +1,14 @@
 {
   "name": "plannerwidget",
   "widgetName": "PlannerWidget",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Doing some planning",
   "copyright": "Mendix 2019",
   "author": "Jelte Lagendijk",
   "config": {
     "widgetPath": "./dist/MxTestProject/widgets",
     "projectPath": "./dist/MxTestProject/",
-    "mendixHost": "http://10.211.55.3:8080",
+    "mendixHost": "http://windows:8080",
     "developmentPort": "3000"
   },
   "packagePath": "com.mendix.widget.custom",
