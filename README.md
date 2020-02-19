@@ -1,3 +1,4 @@
+[![Apache License](https://img.shields.io/badge/license-Apache%202.0-orange.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Dependencies](https://david-dm.org/JelteMX/mendix-planner-widget.svg)]([https://david-dm.org/JelteMX/mendix-planner-widget](https://david-dm.org/JelteMX/mendix-planner-widget))
 [![DevDependencies](https://david-dm.org/JelteMX/mendix-planner-widget/dev-status.svg)]([https://david-dm.org/JelteMX/mendix-planner-widget?type=dev](https://david-dm.org/JelteMX/mendix-planner-widget?type=dev))
 [![Support](https://img.shields.io/badge/Support-Community%20(no%20active%20support)-orange.svg)](https://docs.mendix.com/developerportal/app-store/app-store-content-support)
