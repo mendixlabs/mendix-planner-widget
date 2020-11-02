@@ -139,7 +139,7 @@ export class Planner extends Component<PlannerProps, PlannerState> {
         );
     }
 
-    componentWillReceiveProps(nextProps: PlannerProps): void {
+    UNSAFE_componentWillReceiveProps(nextProps: PlannerProps): void {
         this.createColumns(nextProps);
     }
 
@@ -188,8 +188,7 @@ export class Planner extends Component<PlannerProps, PlannerState> {
 
     private getColumns(days: MonthDay[]): Array<ColumnProps<RowObject>> {
         const groups = groupBy(days, "groupNum");
-        const groupNums = Object.keys(groups)
-            .map(key => parseInt(key, 10));
+        const groupNums = Object.keys(groups).map(key => parseInt(key, 10));
 
         const columns: Array<ColumnProps<RowObject>> = groupNums.map(groupNum => {
             const week = sortBy(groups[groupNum], monthDay => monthDay.day);

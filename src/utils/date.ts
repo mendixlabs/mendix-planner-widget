@@ -33,7 +33,7 @@ export const getMonth = (month: number, year: number, opts?: GetMonthOptions): M
     const endYear = month < 12 ? year : year + 1;
 
     const start = fullWeeks ? tempStart.startOf("isoWeek") : tempStart;
-    const tempEnd = moment(`${endYear}-${endMonth}-01`, "YYYY-MM-DD").subtract(1, 'day');
+    const tempEnd = moment(`${endYear}-${endMonth}-01`, "YYYY-MM-DD").subtract(1, "day");
 
     const end = fullWeeks ? tempEnd.endOf("isoWeek") : tempEnd;
     const today = getToday();

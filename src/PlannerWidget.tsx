@@ -142,7 +142,7 @@ class PlannerWidget extends Component<PlannerWidgetContainerProps, PlannerWidget
         );
     }
 
-    componentWillReceiveProps(nextProps: PlannerWidgetContainerProps): void {
+    UNSAFE_componentWillReceiveProps(nextProps: PlannerWidgetContainerProps): void {
         if (!this.widgetId) {
             const domNode = findDOMNode(this) as Element;
             this.widgetId = domNode.getAttribute("widgetId") || undefined;
