@@ -1,7 +1,7 @@
 {
   "name": "plannerwidget",
   "widgetName": "PlannerWidget",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Doing some planning",
   "copyright": "Mendix 2019",
   "author": "Jelte Lagendijk",
