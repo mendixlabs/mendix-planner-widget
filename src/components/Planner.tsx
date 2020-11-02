@@ -187,10 +187,9 @@ export class Planner extends Component<PlannerProps, PlannerState> {
     }
 
     private getColumns(days: MonthDay[]): Array<ColumnProps<RowObject>> {
-        const groups = groupBy(days, "yearWeek");
+        const groups = groupBy(days, "groupNum");
         const groupNums = Object.keys(groups)
-            .map(key => parseInt(key, 10))
-            .sort();
+            .map(key => parseInt(key, 10));
 
         const columns: Array<ColumnProps<RowObject>> = groupNums.map(groupNum => {
             const week = sortBy(groups[groupNum], monthDay => monthDay.day);
