@@ -173,7 +173,7 @@
             </propertyGroup>
         </propertyGroup>
 
-        <!-- Table settings -->
+        <!-- UI settings -->
 
         <propertyGroup caption="UI settings">
             <propertyGroup caption="Widths">
@@ -221,6 +221,12 @@
                 <property key="height" type="integer" defaultValue="580">
                     <caption>Height</caption>
                     <description/>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Scroll">
+                <property key="scrollToToday" type="boolean" defaultValue="true">
+                    <caption>Scroll to today</caption>
+                    <description>This sometimes can cause issues with your UI, scrolling the table on refresh. If you encounter these issues, please switch this option off.</description>
                 </property>
             </propertyGroup>
         </propertyGroup>

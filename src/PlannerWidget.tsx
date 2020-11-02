@@ -113,7 +113,8 @@ class PlannerWidget extends Component<PlannerWidgetContainerProps, PlannerWidget
                 width: this.props.width,
                 heightUnit: this.props.heightUnit,
                 widthUnit: this.props.widthUnit
-            }
+            },
+            scrollToToday: this.props.scrollToToday
         };
 
         const events: PlannerEventSettings = {

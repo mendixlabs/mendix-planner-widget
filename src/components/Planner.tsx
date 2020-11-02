@@ -27,6 +27,7 @@ export interface PlannerUISettings {
     lockLeftColumn: boolean;
     lockHeaderRow: boolean;
     dimensions: Dimensions;
+    scrollToToday: boolean;
 }
 
 export interface PlannerEventSettings {
@@ -78,7 +79,7 @@ export class Planner extends Component<PlannerProps, PlannerState> {
         super(props);
 
         this.classNames = getClassNames(props.rootClassname || "resourcePlanner");
-        this.hasScrolled = false;
+        this.hasScrolled = !this.props.ui.scrollToToday;
 
         this.state = {
             columns: []

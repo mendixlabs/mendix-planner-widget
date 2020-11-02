@@ -26,6 +26,8 @@ export interface PlannerWidgetUIProps {
     heightUnit: Style.HeightUnitType;
     width: number;
     widthUnit: Style.WidthUnitType;
+
+    scrollToToday: boolean;
 }
 
 export interface PlannerWidgetEventProps {

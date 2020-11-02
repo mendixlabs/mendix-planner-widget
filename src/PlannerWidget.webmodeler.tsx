@@ -20,7 +20,8 @@ export class preview extends Component<PlannerWidgetContainerProps> {
                 width: this.props.width,
                 heightUnit: this.props.heightUnit,
                 widthUnit: this.props.widthUnit
-            }
+            },
+            scrollToToday: false
         };
 
         const events: PlannerEventSettings = {};
