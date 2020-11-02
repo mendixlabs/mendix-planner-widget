@@ -24,7 +24,7 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "git@github.com:mendix/pluggable-widgets-tools.git",
+    "@mendix/pluggable-widgets-tools": "8.15.0",
     "@types/big.js": "^4.0.5",
     "@types/jest": "^24.0.0",
     "@types/lodash": "^4.14.147",
@@ -45,6 +45,7 @@
     "big.js": "^5.2.2",
     "core-js": "^3.4.1",
     "lodash": "^4.17.15",
+    "moment": "^2.29.1",
     "mustache": "^3.1.0",
     "react-resize-detector": "^4.2.1",
     "sanitize-html": "^1.20.1",
