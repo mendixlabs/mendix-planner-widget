@@ -46,6 +46,7 @@ Consider the following data model:
 ### 1. Resources
 
 ![settings resources](/assets/settings_1_resources.png)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FJelteMX%2Fmendix-planner-widget.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FJelteMX%2Fmendix-planner-widget?ref=badge_shield)
 
 - For the rows you will define a Resource entity
 - This can be over XPath/Microflow/Nanoflow
@@ -115,3 +116,6 @@ Please report your issues/suggestion/requests on [Github](https://github.com/Jel
 ## License
 
 Apache-2
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FJelteMX%2Fmendix-planner-widget.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FJelteMX%2Fmendix-planner-widget?ref=badge_large)
