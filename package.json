@@ -48,7 +48,7 @@
     "moment": "^2.29.1",
     "mustache": "^3.1.0",
     "react-resize-detector": "^4.2.1",
-    "sanitize-html": "^1.20.1",
+    "sanitize-html": "^2.3.2",
     "uuid": "^3.3.3"
   }
 }
